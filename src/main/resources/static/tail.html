@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TAIL</title>
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" />
+    <style>
+        pre {
+            font-size: 100%;
+            margin: 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+    <script src="/jquery.min.js"></script>
+    <script src="/index.js"></script>
+    <script>
+        // !function(){var n=null,t=300,o=1e3;var e,r,i=[];e=new SockJS("/cmd"),(r=function(n){for(var t=window.location.search.substring(1).split("&"),o=0;o<t.length;o++){var e=t[o].split("=");if(e[0]==n)return e[1]}return""}("id"))?((n=Stomp.over(e)).debug=null,n.connect({},function(t){n.subscribe("/topic/"+r,function(n){var t;t=n.body,i.push(t)})}),window.setInterval(function(){!function(){var n=i;if(i=[],0!=n.length){for(var o="",e=0;e<n.length;e++)o+="<pre>"+n[e]+"</pre>";var r=$("#out pre"),l=r.length+n.length-t;l>0&&r.slice(0,l).remove(),$("#out").append(o),window.scrollTo(0,document.body.scrollHeight)}}()},o)):alert("lack task id")}();
+    </script>
+</head>
+<body>
+<div style="margin: 20px">
+    <h1>wuzhong test</h1>
+    <pre id="out"></pre>
+</div>
+</body>
+</html>
